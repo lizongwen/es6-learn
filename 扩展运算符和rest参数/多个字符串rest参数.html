@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script>
+			var m='abc';
+			var n='def';
+			function fna(n){
+				console.log(n)
+				console.log(...n)
+			}
+			function fnb(...n) {
+				console.log(n)
+				console.log(...n)
+			}
+			
+			fna('abc','def')//abc  //a b c
+			fna(...('abc','def'))//d   //d
+			fna(...'abc','def')//a    //a
+			fna('abc',...'def')//abc  //a b c
+			fna(...'abc',...'def')//a    //a
+			
+			fna([...('abc','def')])//["d","e","f"]   //d e f
+			fna([...'abc','def'])//["a","b","c","def"]   //a b c def
+			fna(['abc',...'def'])//["abc","d","e","f"]   //abc d e f
+			fna([...'abc',...'def'])//["a","b","c","d","e","f"]   //a b c d e f
+			
+			fnb('abc','def')//['abc','def']  //abc def
+			fnb(...('abc','def'))//["d","e","f"]   //d e f
+			fnb(...'abc','def')//["a","b","c","def"]   //a b c def
+			fnb('abc',...'def')//["abc","d","e","f"]   //abc d e f
+			fnb(...'abc',...'def')//["a","b","c","d","e","f"]   //a b c d e f
+			
+			fnb([...('abc','def')])//[["d","e","f"]]   //["d","e","f"]
+			fnb([...'abc','def'])//[["a","b","c","def"]]   //["a","b","c","def"]
+			fnb(['abc',...'def'])//[["abc","d","e","f"]]   //["abc","d","e","f"]
+			fnb([...'abc',...'def'])//[["a","b","c","d","e","f"]]   //["a","b","c","d","e","f"]
+			
+			console.log('--------------------------------')
+			
+			fna(m,n)//abc  //a b c
+			fna(...(m,n))//d   //d
+			fna(...m,n)//a    //a
+			fna(m,...n)//abc  //a b c
+			fna(...m,...n)//a    //a
+			
+			fna([...(m,n)])//["d","e","f"]   //d e f
+			fna([...m,n])//["a","b","c","def"]   //a b c def
+			fna([m,...n])//["abc","d","e","f"]   //abc d e f
+			fna([...m,...n])//["a","b","c","d","e","f"]   //a b c d e f
+			
+			fnb(m,n)//['abc','def']  //abc def
+			fnb(...(m,n))//["d","e","f"]   //d e f
+			fnb(...m,n)//["a","b","c","def"]   //a b c def
+			fnb(m,...n)//["abc","d","e","f"]   //abc d e f
+			fnb(...m,...n)//["a","b","c","d","e","f"]   //a b c d e f
+			
+			fnb([...(m,n)])//[["d","e","f"]]   //["d","e","f"]
+			fnb([...m,n])//[["a","b","c","def"]]   //["a","b","c","def"]
+			fnb([m,...n])//[["abc","d","e","f"]]   //["abc","d","e","f"]
+			fnb([...m,...n])//[["a","b","c","d","e","f"]]   //["a","b","c","d","e","f"]
+			
+		</script>
+
+	</body>
+
+</html>

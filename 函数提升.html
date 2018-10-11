@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+		{
+			function f(){
+				console.log("I am outside");
+			}
+			(function(){
+				if(false){
+					function f(){
+						console.log("I am inside")
+					}
+				}
+				f();
+			}())
+			{
+				f();
+			}
+		}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script src="system.src.js"></script>
+		<script>
+			SystemJS.config({
+				map: {
+					'plugin-babel': './plugin-babel.js',
+					'systemjs-babel-build': './systemjs-babel-browser.js'
+				},
+				transpiler: 'plugin-babel'
+			});
+			SystemJS.import('testmod1.js').then(function(m) {
+				console.log(m)//ModuleNamespace对象
+				//console.log(new m.q().es6);//hello
+			});
+//			SystemJS.import('testmod1.js').then(function(m) {
+//				console.log(m)//1
+//			});
+		</script>
+	</body>
+
+</html>

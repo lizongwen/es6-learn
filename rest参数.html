@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function fna(arr1,...arr2){
+				console.log(arguments);//{ 0: "a", 1: "b", 2: "c", 3: "d", 4: "e", 5: "f"}
+				console.log(arr1);//a
+				console.log(arr2);//[ "b", "c", "d", "e", "f" ]
+				var rs=arr2.join("");
+				console.log(rs);//bcdef
+			}
+			function fnb(arr1,...arr2){
+				console.log(arguments);//{ 0: ['g','h','i'], 1: ['j','k','l']}
+				console.log(arr1);//[ "g", "h", "i" ]
+				console.log(arr2);//[['j','k','l']]
+				var rs=arr2.join("");
+				console.log(rs);//j,k,l
+			}
+			function fnc(arr){
+				console.log(arr)//a
+			}
+			function fnd(...arr){
+				console.log(arr)
+			}
+			fna(...['a','b','c'],...['d','e','f']);
+			fnb(['g','h','i'],['j','k','l'])
+			fnc(...['a','b','c']);
+			fnd(...['a','b','c']);
+			fnd(['a','b','c']);
+			fnd('a','b','c');
+			
+			var aa=[1,2,3];
+			console.log(...aa);//1,2,3
+			var bb='456';
+			console.log(...bb);//4 5 6
+			
+		</script>
+	</body>
+</html>

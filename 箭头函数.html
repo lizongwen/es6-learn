@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script>
+			function fun(m){
+				return m();
+			}
+			
+			//箭头函数是一个匿名函数
+			
+			//声明方法：
+			//赋给一个变量
+			var fna = () => 5;    //函数体内只有一条语句省略{}情况， 函数体自带return语句
+			var fnb = () => { console.log(5) }    //函数体内只有一条语句不省略{}情况， 函数体不自带return语句。
+			var fnc = () => { return 10 }   //可自行添加return语句
+			var fnd = () => { console.log("a");console.log("b");return "ab"} //函数体内有多条语句不可以省略{}， 函数体不自带return语句，也可以添加return
+			var fne	= () => 200;
+			var fnf	= () => { console.log(500)};
+					
+			
+			//用法一：直接执行
+			var rsa = fna();
+			var rsb = fnb();
+			var rsc = fnc();
+			var rsd = fnd();
+			
+			
+			//用法二：作为参数传递
+			var rse = fun(fne);
+			setTimeout(fnf,2000);
+			
+			
+			//结果
+			setTimeout(function(){
+				console.log("--------------")
+				console.log(rsa)//5
+				console.log(rsb)//undefined
+				console.log(rsc)//10
+				console.log(rsd)//ab
+				console.log(rse)//100
+			},1000)
+			
+			
+			//总结，有{}括号则不自带return语句
+			
+		</script>
+	</body>
+
+</html>

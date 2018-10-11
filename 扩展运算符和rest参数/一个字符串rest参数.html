@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script>
+			var m='abc';
+			function fna(n){
+				console.log(n)
+				console.log(...n)
+			}
+			function fnb(...n) {
+				console.log(n)
+				console.log(...n)
+			}
+
+			fna('abc')//abc  //a b c
+			
+			fna(...'abc')//a   //a
+			
+			fna([...'abc'])//["a","b","c"]   //a b c
+			
+			fnb('abc')//['abc']   //abc
+			
+			fnb(...'abc')//["a","b","c"]   //a b c
+			
+			fnb([...'abc'])//[["a","b","c"]]  //["a","b","c"]
+			
+			console.log('--------------------------------')
+			
+			fna(m)//abc  //a b c
+			
+			fna(...m)//a   //a
+			
+			fna([...m])//["a","b","c"]   //a b c
+			
+			fnb(m)//['abc']   //abc
+			
+			fnb(...m)//["a","b","c"]   //a b c
+			
+			fnb([...m])//[["a","b","c"]]  //["a","b","c"]
+			
+		</script>
+
+	</body>
+
+</html>

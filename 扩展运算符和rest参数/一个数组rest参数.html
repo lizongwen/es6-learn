@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script>
+			var m=["abc","def","ghi"]
+			function fna(n){
+				console.log(n)
+				console.log(...n)
+			}
+			function fnb(...n) {
+				console.log(n)
+				console.log(...n)
+			}
+
+			fna(["abc","def","ghi"])//["abc","def","ghi"]   //abc def ghi
+			
+			fna(...["abc","def","ghi"])//abc   //a b c
+			
+			fna([...["abc","def","ghi"]])//["abc","def","ghi"]   //abc def ghi
+			
+			fnb(["abc","def","ghi"])//[["abc","def","ghi"]]  //["abc","def","ghi"]
+			
+			fnb(...["abc","def","ghi"])//["abc","def","ghi"]   //abc def ghi
+			
+			fnb([...["abc","def","ghi"]])//[["abc","def","ghi"]]  //["abc","def","ghi"]
+			
+			console.log('--------------------------------')
+			
+			fna(m)//["abc","def","ghi"]   //abc def ghi
+			
+			fna(...m)//abc   //a b c
+			
+			fna([...m])//["abc","def","ghi"]   //abc def ghi
+			
+			fnb(m)//[["abc","def","ghi"]]  //["abc","def","ghi"]
+			
+			fnb(...m)//["abc","def","ghi"]   //abc def ghi
+			
+			fnb([...m])//[["abc","def","ghi"]]  //["abc","def","ghi"]
+			
+		</script>
+
+	</body>
+
+</html>

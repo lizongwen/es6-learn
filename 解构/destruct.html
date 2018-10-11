@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			let [m,n]=[1,2,3]
+			console.log(m,n);
+			let {0:a,1:b,2:c,3:d,4:e,length:len}="hello";
+			console.log(a,b,c,d,e,len);
+			function fn({x,y}={x:0,y:0}){
+				console.log(x,y)
+			}
+			fn({x:3,y:8})
+			var k=5,l=6;
+			[k,l]=[l,k];
+			console.log(k,l);
+			var map=new Map();
+			map.set('first','hello');
+			map.set('second','world');
+			console.log(map)
+			for(let [key] of map){
+				console.log(key)
+			}
+			var arr=[1,2,3,4,5,6,7];
+			arr.forEach(function(e){
+				console.log(e)
+			})
+		</script>
+	</body>
+</html>

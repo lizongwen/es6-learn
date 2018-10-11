@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script>
+			'use strict'
+			function getFullName({
+				firstName,
+				lastName
+			}) {
+				console.log(firstName, lastName)
+			}
+
+			getFullName({
+				lastName: 'B',
+				firstName: 'A' //传递给形参同名的参数，所以位置可变动
+			})
+		</script>
+	</body>
+
+</html>

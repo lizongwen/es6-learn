@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			//includes()找到某个参数字符串,返回一个布尔值
+			console.log("hello".includes("ll"));//true
+			//startWith()找到参数字符串是否在源字符串的头部,返回一个布尔值
+			console.log("hello world".startsWith("hello"));//true
+			console.log("hello world".startsWith("world",6));//true,6表示从第6位开始
+			//endsWith()找到参数字符串是否在源字符串的尾部，返回一个布尔值
+			console.log("hello world".endsWith("world"));//true
+			console.log("hello world".endsWith("hello",5));//true 5表示前5个字符
+			//repart()将字符串重复n次,返回一个新的字符串
+			console.log("hello".repeat("2"));//hellohello
+			//ES7方法padStart()和padEnd用于补齐头部和尾部，返回补齐后的字符串
+			//console.log("hello".padStart(10,"ab"))//ababahello 10表示补齐后的字符串长度，ab表示用ab字符串去补齐
+			//console.log("hello".padEnd(10,"ab"))//helloababa 10表示补齐后的字符串长度，ab表示用ab字符串去补齐
+			
+			//模板字符串，用反引号标识
+			let name="lzw";
+			console.log(`hello${name}`);//hellolzw,用${}包裹变量放入用反引号标识的字符串中
+			console.log(`hello\`lzw`);//hello`lzw,如果模板字符串中要显示`字符，则要用转义字符\
+			
+		</script>
+	</body>
+</html>
