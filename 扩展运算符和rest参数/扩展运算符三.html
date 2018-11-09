@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script>
+			var m = {
+				first: 'a',
+				second: "b",
+				three: "c"
+			}
+			console.log({...{first: 'a',second: "b",three: "c"}})//{first: 'a',second: "b",three: "c"}  解构对象必须在外层套一个{}
+			console.log({...m}) //{first: 'a',second: "b",three: "c"}  解构对象必须在外层套一个{}
+		</script>
+	</body>
+
+</html>
