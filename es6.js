@@ -15,8 +15,8 @@ console.log(A);//10
 const a='foo';
 const b='t';
 const c='ball'
-//const d=`连接${a}${b}${c}`;
-//console.log(d);
+const d=`连接${a}${b}${c}`;
+console.log(d);
 
 //数组解构赋值
 const [X,Y,Z]=[1,2,3];//数组解构const X=1,const Y=2,const Z=3
